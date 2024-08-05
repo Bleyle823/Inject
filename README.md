@@ -1,2 +1,2 @@
-# Inject
-GeoProtest is a decentralized application (DApp) that enables users to claim unique NFTs by verifying their presence at specific locations where protests and demonstrations are taking place. 
+# Inject 💉
+GeoProtest is a decentralized application (DApp) that enables users to claim unique NFTs by verifying their presence at specific locations where protests and demonstrations are taking place. GeoProtest guarantees that participants obtain verified digital tokens as evidence of their participation in social and political movements by utilizing blockchain technology and geolocation. These NFTs function as a digital activism badge, offering a verifiable record of involvement and encouraging a feeling of camaraderie and unity among activists.
