@@ -109,13 +109,13 @@ Leaflet is a lightweight library for interactive maps. The Tile Layer URL is nec
 NEXT_PUBLIC_LEAFLET_TILE_LAYER_URL=https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
 ```
 ### 🔗 Smart Contracts
-## This project deploys smart contracts on multiple testnets for broad compatibility:
+## This project deploys smart contracts on multiple testnets for broad compatibilit:
 
-- Mode Testnet: Contract address: 0xYourContractAddress
-- Metal L2 Testnet: Contract address: 0xYourContractAddress
-- Celo Alfajores Testnet: Contract address: 0xYourContractAddress
-- Base Sepolia Testnet: Contract address: 0xYourContractAddress
-- Op Sepolia Testnet: Contract address: 0xYourContractAddress
+- Mode Testnet: Contract address: `0x81542767a42a3c6858A2A4a0605c30343d747619`
+- Metal L2 Testnet: Contract address: `0x22513AB26b2C22c5ed81EcA641E1Ba7166078Ffa`
+- Celo Alfajores Testnet: Contract address: `0x0feF1554faC65a49fd9C8f4E4522a0aAb40D675B`
+- Base Sepolia Testnet: Contract address: `0x986F524cf877A31d01E5bEBdc81CAd17676Ea87F`
+- Op Sepolia Testnet: Contract address: `0xAaD3D1B128b3B5578e8f9b4CD0f1d5541c327374`
 Each contract manages the minting of NFTs based on geolocation data, ensuring that participation is recorded on the blockchain.
 
 ### 📚 Additional Information
