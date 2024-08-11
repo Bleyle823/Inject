@@ -77,7 +77,7 @@ TW_BACKEND_WALLET=your_wallet_private_key_here
 - TW_ENGINE_URL: Available in your Thirdweb Engine setup.
 - TW_ACCESS_TOKEN: Generated from your Thirdweb account.
 
-### 🌍 Worldcoin Integration
+# 🌍 Worldcoin Integration
 ## 1. Worldcoin Authentication
 This project uses Worldcoin's "Log in with World ID" to ensure user privacy and security. It allows users to authenticate without revealing their identity.
 
@@ -92,7 +92,7 @@ To use Worldcoin, you need to set up a developer account and get your credential
 WLD_CLIENT_ID=your_worldcoin_client_id
 WLD_CLIENT_SECRET=your_worldcoin_client_secret
   ```
-### 🗺️ Mapbox & Leaflet Setup
+# 🗺️ Mapbox & Leaflet Setup
 ## 1. Mapbox Integration
 Mapbox is used for rendering the maps and marking the protest locations. To get started:
 
@@ -102,13 +102,13 @@ Mapbox is used for rendering the maps and marking the protest locations. To get 
 ```bash
   NEXT_PUBLIC_MAPBOX_API_KEY=your_mapbox_api_key
 ```
-## Leaflet Configuration
+# Leaflet Configuration
 Leaflet is a lightweight library for interactive maps. The Tile Layer URL is necessary to load map tiles. Add it to your environment variables:
 
 ```bash
 NEXT_PUBLIC_LEAFLET_TILE_LAYER_URL=https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
 ```
-### 🔗 Smart Contracts
+# 🔗 Smart Contracts
 ## This project deploys smart contracts on multiple testnets for broad compatibilit:
 
 - Mode Testnet: Contract address: `0x81542767a42a3c6858A2A4a0605c30343d747619`
@@ -118,7 +118,7 @@ NEXT_PUBLIC_LEAFLET_TILE_LAYER_URL=https://{s}.tile.openstreetmap.org/{z}/{x}/{y
 - Op Sepolia Testnet: Contract address: `0xAaD3D1B128b3B5578e8f9b4CD0f1d5541c327374`
 Each contract manages the minting of NFTs based on geolocation data, ensuring that participation is recorded on the blockchain.
 
-### 📚 Additional Information
+# 📚 Additional Information
 ## 🛠 Development Mode
 To start the development server:
 
