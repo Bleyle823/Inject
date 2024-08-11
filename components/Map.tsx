@@ -33,11 +33,11 @@ const MapEventHandler: React.FC<MapEventHandlerProps> = ({ position }) => {
 
 const Map = () => {
     const [position, setPosition] = useState<Coordinates>({lat: 51.505, lng: -0.09});
-    let watchId: number;
-    
+    const [watchId, setWatchId] = useState<number | null>(null);
+
     const getLocation = () => {
         if (navigator.geolocation) {
-            navigator.geolocation.watchPosition(
+            const id = navigator.geolocation.watchPosition(
                 (pos) => {
                     console.log("Location fetched successfully: ", pos);
                     setPosition({lat: pos.coords.latitude, lng: pos.coords.longitude});
@@ -48,20 +48,21 @@ const Map = () => {
                 },
                 { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
             );
+            setWatchId(id);
         } else {
             alert("Geolocation is not supported by your browser.");
         }
     };
 
     useEffect(() => {
-        getLocation();    
+        getLocation();
 
         return () => {
-            if (watchId !== undefined) {
+            if (watchId !== null) {
                 navigator.geolocation.clearWatch(watchId);
             }
         };
-    }, []);
+    }, [watchId]);
 
     const { contract } = useContract(NFT_CONTRACT_ADDRESS);
     const { data: nfts } = useNFTs(contract);
@@ -70,19 +71,17 @@ const Map = () => {
       <MapContainer
           center={[position.lat, position.lng]} 
           zoom={16} 
-          style={{ height: '90vh', width: '100%' }}
+          style={{ height: '536px', width: '100%' }}
       >
-          {/* <MapEventHandler position={position} />
-           <TileLayer 
+           <MapEventHandler position={position} />
+           <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+           {/* <TileLayer 
               url={`https://api.mapbox.com/styles/v1/bleyle/clzov5zfo008a01pd80mp5cnx/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.NEXT_PUBLIC_MAP_TOKEN}`}
-              attribution="Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>"
-          />  */}
-          <iframe
-  src={`https://api.mapbox.com/styles/v1/bleyle/clzov5zfo008a01pd80mp5cnx.html?title=view&access_token=${process.env.NEXT_PUBLIC_MAP_TOKEN}`}
-  width="100%"
-  height="900px"
-  title="My file"
-></iframe>
+              attribution='Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
+          />   */}
           <Marker position={[position.lat, position.lng]} icon={userIcon}>
               <Circle
                   center={position}
