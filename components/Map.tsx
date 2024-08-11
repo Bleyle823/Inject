@@ -71,7 +71,7 @@ const Map = () => {
       <MapContainer
           center={[position.lat, position.lng]} 
           zoom={16} 
-          style={{ height: '536px', width: '100%' }}
+          style={{ height: '90vh', width: '100%' }}
       >
            <MapEventHandler position={position} />
            <TileLayer

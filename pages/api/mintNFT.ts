@@ -40,7 +40,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             });
     
             const response = await engine.erc1155.claimTo(
-                "<chain_id>",
+                " 84532",
                 NFT_CONTRACT_ADDRESS,
                 TW_BACKEND_WALLET,
                 {
