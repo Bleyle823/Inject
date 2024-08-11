@@ -72,11 +72,17 @@ const Map = () => {
           zoom={16} 
           style={{ height: '90vh', width: '100%' }}
       >
-          <MapEventHandler position={position} />
-          <TileLayer
-              url={`https://api.mapbox.com/styles/v1/MAPBOX_USERNAME/MAPBOX_STYLE_ID/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.NEXT_PUBLIC_MAP_TOKEN}`}
+          {/* <MapEventHandler position={position} />
+           <TileLayer 
+              url={`https://api.mapbox.com/styles/v1/bleyle/clzov5zfo008a01pd80mp5cnx/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.NEXT_PUBLIC_MAP_TOKEN}`}
               attribution="Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>"
-          />
+          />  */}
+          <iframe
+  src={`https://api.mapbox.com/styles/v1/bleyle/clzov5zfo008a01pd80mp5cnx.html?title=view&access_token=${process.env.NEXT_PUBLIC_MAP_TOKEN}`}
+  width="100%"
+  height="900px"
+  title="My file"
+></iframe>
           <Marker position={[position.lat, position.lng]} icon={userIcon}>
               <Circle
                   center={position}
